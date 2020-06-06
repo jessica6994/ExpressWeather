@@ -1,0 +1,14 @@
+<%- include("partials/header") %>
+<div class="container">
+  <div class="jumbotron home-jumbo text-center">
+      <div class="container">
+        <h1 class="display-4">Search for the weather in your area!</h1>
+        <p class="lead">Search by city to find out if you really need to bring that coat?</p>
+        <form action="/weather" method="GET">
+          <input type="text" class="form-control mb-3 w-75 mx-auto" name="city" placeholder="City...">
+          <input class="btn btn-large btn-outline-light" type="submit">
+      </form>
+    </div>
+  </div>
+</div>
+<%- include("partials/footer") %>

@@ -1,0 +1,40 @@
+<%- include("partials/header") %>
+
+<div class="container">
+    <div class="jumbotron weather-jumbo text-center">
+        <div class="container">
+            <h1 class="display-4">Weather in <%= city %></h1>
+            <h2><%= weather["weather"][0]["main"] %></h2>
+            <h3 style="text-transform: capitalize;"><%= weather["weather"][0]["description"] %></h3>
+            <br>
+            <p>Feels Like: <%= Math.floor(weather["main"]["feels_like"]-273) %> °C, Lows of: <%= Math.floor(weather["main"]["temp_min"]-273) %> °C, Highs of: <%= Math.floor(weather["main"]["temp_max"]-273) %> °C</p>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 col-md-4" data-aos="fade-up" data-aos-duration="1000">
+            <div class="title"><h2 class="mb-0">Temperature</h2></div>
+            <div class="results">
+                <h3><%= Math.floor(weather["main"]["temp"]-273) %> °C</h3>
+            </div>
+        </div>
+        <div class="col-12 col-md-4" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+            <div class="title"><h2 class="mb-0">Humidity</h2></div>
+            <div class="results">
+                <h3><%= weather["main"]["humidity"] %> %</h3>
+            </div>
+        </div>
+        <div class="col-12 col-md-4" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
+            <div class="title"><h2 class="mb-0">Wind Speed</h2></div>
+            <div class="results">
+                <h3><%= weather["wind"]["speed"] %>mph</h3>
+            </div>
+        </div>        
+    </div>
+    <div class="text-center mt-5">
+        <a href="/" class="btn btn-large btn-outline-dark">Search Again</a>
+    </div>
+</div>
+
+<%- include("partials/footer") %>
